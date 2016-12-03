@@ -1,4 +1,4 @@
-# spring-core-devops
-This repository contains code related to my Spring Core DevOps course.
+# spring-boot-actuator
+This repository contains code related to my Spring Boot Acutator course.
 
-You can learn more about the course [here](http://courses.springframework.guru/courses/spring-core-dev-ops) on my site.
+You can learn more about my courses [here](http://courses.springframework.guru/courses/) on my site.
