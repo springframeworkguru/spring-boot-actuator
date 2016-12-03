@@ -18,7 +18,7 @@ import java.math.BigDecimal;
  * Created by jt on 5/6/16.
  */
 @Component
-public class AcuatorBootstrap implements ApplicationListener<ContextRefreshedEvent> {
+public class ActuatorBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
     private AuthorRepository authorRepository;
     private ProductCategoryRepository productCategoryRepository;
