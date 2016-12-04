@@ -5,6 +5,7 @@ import guru.springframework.repositories.ProductRepository;
 import guru.springframework.services.jms.JmsTextMessageService;
 import org.apache.commons.collections4.IteratorUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.metrics.CounterService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,16 +18,20 @@ public class ProductServiceImpl implements ProductService {
 
     private ProductRepository productRepository;
     private JmsTextMessageService jmsTextMessageService;
+    private CounterService counterService;
 
     @Autowired
-    public ProductServiceImpl(ProductRepository productRepository, JmsTextMessageService jmsTextMessageService) {
+    public ProductServiceImpl(ProductRepository productRepository, JmsTextMessageService jmsTextMessageService,
+                              CounterService counterService) {
         this.productRepository = productRepository;
         this.jmsTextMessageService = jmsTextMessageService;
+        this.counterService = counterService;
     }
 
     @Override
     public Product getProduct(Integer id) {
         jmsTextMessageService.sendTextMessage("Fetching Product ID: " + id );
+        counterService.increment("guru.springframework.services.getproduct");
         return productRepository.findOne(id);
     }
 
