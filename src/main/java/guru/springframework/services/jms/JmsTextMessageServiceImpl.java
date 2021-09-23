@@ -1,6 +1,5 @@
 package guru.springframework.services.jms;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Service;
 
@@ -15,13 +14,8 @@ public class JmsTextMessageServiceImpl implements JmsTextMessageService {
     private Queue textMessageQueue;
     private JmsTemplate jmsTemplate;
 
-    @Autowired
-    public void setTextMessageQueue(Queue textMessageQueue) {
+    public JmsTextMessageServiceImpl(Queue textMessageQueue, JmsTemplate jmsTemplate) {
         this.textMessageQueue = textMessageQueue;
-    }
-
-    @Autowired
-    public void setJmsTemplate(JmsTemplate jmsTemplate) {
         this.jmsTemplate = jmsTemplate;
     }
 

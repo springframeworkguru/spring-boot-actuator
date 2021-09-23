@@ -143,6 +143,7 @@
 <div class="container" style="height: 100vh;">
     <div class="row">
         <div class="col-md-12">
+            <!--/*@thymesVar id="product" type="guru.springframework.domain.Product"*/-->
             <h1 th:text="${product.courseName}">Spring Framework Guru - Course Name</h1>
         </div>
     </div>
@@ -150,6 +151,7 @@
         <div class="col-md-6">
            <div class="row">
                <div class="col-md-12">
+                   <!--/*@thymesVar id="product" type="guru.springframework.domain.Product"*/-->
                    <img src="../static/images/SpringIntroThumb.png"
                         th:src="@{'/images/'+${product.imageUrl}}"
                         class="center-block"/>
@@ -157,6 +159,7 @@
            </div>
             <div class="row course-listing-extra-info col-xs-12">
                 <div class="col-xs-8">
+                    <!--/*@thymesVar id="product" type="guru.springframework.domain.Product"*/-->
                     <img align="left" alt="John Thompson"
                          src="../static/images/instructor_jt.jpg"
                          th:src="@{'/images/'+${product.author.image}}"
@@ -167,6 +170,7 @@
                     </div>
                 </div>
                 <div class="col-xs-4">
+                    <!--/*@thymesVar id="product" type="guru.springframework.domain.Product"*/-->
                     <div class="small course-price" th:text="${product.price > 0 ? '$' + product.price : 'FREE'}">
                         $PRICE
                     </div>
@@ -174,6 +178,7 @@
             </div>
             <div class="row col-xs-12">
                 <ol class="breadcrumb" >
+                    <!--/*@thymesVar id="product" type="guru.springframework.domain.Product"*/-->
                     <li th:each="productCategory : ${product.productCategories}">
                         <a href="#" th:text="${productCategory.category}">Cat 1</a></li>
                     <li th:remove="all"><a href="#">Cat 2</a></li>
@@ -183,6 +188,7 @@
         </div>
         <div class="col-md-6">
              <div>
+                 <!--/*@thymesVar id="product" type="guru.springframework.domain.Product"*/-->
                  <h2 th:text="${product.courseSubtitle}">Course Title</h2>
                  <p th:text="${product.courseDescription}">Adipiscing magna vestibulum fringilla tristique ad a primis ante mi inceptos condimentum curabitur
                      curabitur eu sed nullam ridiculus nunc montes id nostra dui inceptos scelerisque posuere ipsum mus.

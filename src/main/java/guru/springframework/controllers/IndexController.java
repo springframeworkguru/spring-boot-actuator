@@ -1,7 +1,6 @@
 package guru.springframework.controllers;
 
 import guru.springframework.services.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,8 +13,7 @@ public class IndexController {
 
     private ProductService productService;
 
-    @Autowired
-    public void setProductService(ProductService productService) {
+    public IndexController(ProductService productService) {
         this.productService = productService;
     }
 
