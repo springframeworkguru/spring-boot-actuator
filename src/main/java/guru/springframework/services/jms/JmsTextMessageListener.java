@@ -1,5 +1,6 @@
 package guru.springframework.services.jms;
 
+import guru.springframework.config.JMSConfig;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class JmsTextMessageListener {
 
-    @JmsListener(destination = "text.messagequeue")
+    @JmsListener(destination = JMSConfig.textMsgQueue)
     public void onMessage(String msg){
         System.out.println("#### " + msg + " ###" );
     }
